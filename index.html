@@ -33,7 +33,7 @@
     </div>
 
     <script>
-        // set up text to print, each item in array is new line
+        // configure o texto para digitar sozinho no campo <p class="texto" id="typedtext"></p>
 var aText = new Array(
 "Olá, meu nome é Matheus!", 
 "Eu tenho 22 anos e trabalho com programação há 8 anos.",
@@ -41,14 +41,14 @@ var aText = new Array(
 "",
 "Fique à vontade para acessar minhas redes sociais!"
 );
-var iSpeed = 70; // time delay of print out
-var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 20; // start scrolling up at this many lines
+var iSpeed = 70; 
+var iIndex = 0; 
+var iArrLength = aText[0].length; 
+var iScrollAt = 20;
  
-var iTextPos = 0; // initialise text position
-var sContents = ''; // initialise contents variable
-var iRow; // initialise current row
+var iTextPos = 0; 
+var sContents = ''; 
+var iRow; 
  
 function typewriter()
 {
