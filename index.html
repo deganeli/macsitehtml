@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mac Site HTML CSS</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="main">
+        <div class="menu">
+            <img src="https://i.imgur.com/6KJvL8s.png?1" class="apple">
+            <span class="menus lov3r">lov3r.dev</span>
+            <span class="menus linkstopo">LiverX</span>
+            <span class="menus linkstopo">xFalcon</span>
+            <img src="https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png" class="direita bandeira">
+            <img src="https://i.imgur.com/IQyPbHg.png?1" class="direita bateria">
+            <img src="https://i.imgur.com/RGoeFBs.png?1" class="direita wifi">
+        </div>
+        <div class="box1">
+            <div class="menubox"></div>
+            <img src="https://f4lkon.dev/img/eu.gif" class="eu">
+            <h2 class="nome">lov3r<span class="dev">.dev</span></h2>
+            <div class="console">
+                <p class="texto" id="typedtext"></p>
+            </div>
+        </div>
+        <div class="dock">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" class="dockicon finder">
+            <img src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Settings-512.png" class="dockicon config">
+            <img src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Mail-512.png" class="dockicon mail">
+            <img src="https://i.imgur.com/9P1ZhJQ.png" class="dockicon discord">
+        </div>
+    </div>
+
+    <script>
+        // set up text to print, each item in array is new line
+var aText = new Array(
+"Olá, meu nome é Matheus!", 
+"Eu tenho 22 anos e trabalho com programação há 8 anos.",
+"Sou programador fullstack com foco em front-end.",
+"",
+"Fique à vontade para acessar minhas redes sociais!"
+);
+var iSpeed = 70; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "|";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+    </script>
+</body>
+
+</html>
